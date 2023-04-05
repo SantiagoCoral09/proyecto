@@ -15,7 +15,7 @@
             </div>
             <div id="itemName">
                 <span id="itemNameTag">{{row[2]}}</span><br> Cantidad agregados: {{row[5]}}<br>
-                <a href="/removeFromCart?kartId={{row[0]}}">Eliminar</a>
+                <a class="btn btn-danger mt-auto" href="/removeFromCart?kartId={{row[0]}}" onclick="return confirm('¿Seguro quieres eliminar del carrito?')">Eliminar</a>
             </div>
             <div id="itemPrice">
                 ${{row[6]}}

@@ -40,7 +40,7 @@
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                     {% if 'email' in session %}
-                    <li class="nav-item"><a class="nav-link" href="{{url_for('login_registro.logout')}}">Cerrar Sesion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url_for('login_registro.logout')}}" onclick="return confirm('¿Seguro quieres salir?')">Cerrar Sesion</a></li>
                     {% else %}
                     <li class="nav-item"><a class="nav-link" href="{{url_for('login_registro.login')}}">Login/Registrar cuenta</a></li>
                     {% endif %}

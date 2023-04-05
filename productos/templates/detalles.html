@@ -17,6 +17,7 @@
                 <p class="lead">{{producto[3]}}</p>
 
                 <div class="d-flex">
+                    {% if producto[5] > 0 %}
                     <form action="{{url_for('carrito.agregar')}}" method="post">
                         <input name="productId" value="{{producto[0]}}" hidden />
 
@@ -28,6 +29,13 @@
                             Add to cart
                         </button>
                     </form>
+                    {% else %}
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+
+                        <div class="text-center">Agotado por el momento
+                        </div>
+                    </div>
+                    {% endif %}
                     {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for
                     category,message in
                     messages %}

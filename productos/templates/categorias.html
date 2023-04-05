@@ -54,13 +54,21 @@
                         </div>
                     </div>
                     <!-- Product actions-->
-                    <form action="/agregar" method="post"></form>
+                    
+                    {% if producto[5] > 0 %}
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
                                 href="/detalles?productId={{producto[0]}}">Añadir al carrito</a>
                         </div>
                     </div>
+                    {% else %}
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+
+                        <div class="text-center">Agotado por el momento
+                        </div>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
